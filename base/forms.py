@@ -9,7 +9,7 @@ class MyUserCreationForm(UserCreationForm):
 
 class BookForm(ModelForm):
         class Meta:
-            model = Books
+            model= Books
             fields = '__all__'
 
 class UserForm(ModelForm):

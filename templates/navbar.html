@@ -1,0 +1,49 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+         <a class="navbar-brand" href="https://www.youtube.com/watch?v=Yj6V_a1-EUA">
+            <img src="{% static 'files/travel.svg' %}" alt="Logo" style="height: 40px;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home'%}"> მთავარი </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'about'%}">შესახებ</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'profile' user.id %}">პროფილი</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">გამოსვლა</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+            <form class="d-flex" role="search" action="">
+                <input class="form-control me-2" type="search" name="q" placeholder="Search Books" aria-label="Search">
+                <button class="btn btn-purple" type="submit">Search</button>
+            </form>
+
+            {% if request.user.is_authenticated %}
+            <div style="margin: 0px 30px;">
+                <a href="{% url 'profile' request.user.id %}">
+                    <img src="{{ request.user.avatar.url }}" width="40px" height="40px" style="border-radius:50px">
+                    {{ request.user.username }}
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
+

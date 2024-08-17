@@ -1,0 +1,64 @@
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns:1fr 5fr;
+    }
+    .row {
+        display:flex;
+        flex-direction:row;
+    }
+    .genres {
+        margin: 10px 10px;
+    }
+</style>
+
+<div class="home-container">
+  <div class="genres">
+        <h4> კონტინენტი :</h4>
+        <br>
+          <div class="genres-list">
+        <a href="{{ request.path }}">All</a>
+        {% for genre in genres %}
+            <a href="{{ request.path }}?q={{ genre.name }}">{{ genre }}</a>
+        {% endfor %}
+          </div>
+  </div>
+
+    <div class="row">
+        <div class="object" style="margin-left: 10px;">
+            <h1>{{ heading }}</h1>
+        </div>
+        <hr>
+        <br>
+         <a href="{% url 'add' %}">Add Book</a>
+        <br><br>
+
+        <div class="card-container">
+            {% for book in books %}
+                <div class="card-column" style="width: 18 rem; margin: 5px;">
+                    <div class="card">
+                        <img src="{{ book.picture.url }}" class="card-img-top" alt="Book cover">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.name }} ID {{ book.creator }}</h5>
+                            <h6 class="card-author">{{ book.author }}</h6>
+                            <p class="card-text">{{ book.description | slice:":20" }}</p>
+
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'reading' book.id%}" class="btn btn-primary">Read</a>
+                                {% if book in request.user.books.all %}
+                                    <a href="{% url 'adding' book.id %}" class="btn btn-secondary">Add</a>
+                                {% else %}
+                                    <a href="{% url 'drop' book.id %}" class="btn btn-danger">Drop</a>
+                                {% endif %}
+                                {% if request.user == book.creator %}
+                                    <a href="{% url 'delete' book.id %}" class="btn btn-primary">Delete</a>
+                                {% endif %}
+
+                                {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

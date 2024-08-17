@@ -1,0 +1,226 @@
+body{
+    background-color:  #F8EDE3;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.carousel-inner {
+    overflow: hidden; /* Hide overflow from images */
+}
+
+.carousel-inner .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust this height as needed */
+    position: relative; /* Ensure images are positioned within the item */
+
+}
+
+.carousel-inner .carousel-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Ensures the image fits within the container while maintaining aspect ratio */
+    object-position: center; /* Centers the image within the container */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Adds drop shadow */
+    border-radius: 0px; /* Optional: Adds rounded corners to images */
+}
+
+/* Custom styling for carousel control buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #F8EDE3; /* Semi-transparent black background */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+}
+
+/* Styling for carousel indicators (dots) */
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    background-color: #F8EDE3; /* Semi-transparent white background */
+    border: none;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #F1D3CE; /* Opaque white for active indicator */
+}
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px; /* Adds space between the columns */
+}
+
+.genres {
+    margin: 50px 30px;
+}
+
+.genres a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.genres a:hover {
+    text-decoration: underline;
+}
+
+.books-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    gap: 15px; /* Adds space between cards */
+}
+
+.card {
+    width: 18rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.card-img-top {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Adjust to fit your design */
+    object-fit: cover; /* Cover the container while preserving aspect ratio */
+}
+
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-author {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+.genres-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the spacing between items */
+}
+
+.genres-list a {
+    padding: 5px 10px;
+    background-color: #f0f0f0; /* Adjust background color */
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+.genres-list a:hover {
+    background-color: #ccc; /* Hover effect */
+}
+.custom-navbar {
+    background-color: #F1D3CE;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.custom-navbar .navbar-brand img {
+    height: 40px;
+}
+
+.custom-navbar {
+    background-color: #F1D3CE;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.custom-navbar .navbar-brand img {
+    height: 40px;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ddd;
+}
+
+.custom-navbar .btn-purple {
+    background-color: #800080;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .form-control {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

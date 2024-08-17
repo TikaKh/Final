@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+           {% block title %}<title> register Page </title> {% endblock %}
+
+  {% block content %}
+    <h1 style="color:purple;" >register page</h1>
+    <form method="POST" action="">
+    {% csrf_token %}
+       {{ form }}
+        <br>
+        <input type="submit" value="Register">
+
+        <br>
+        <p>Are You Already Registered?</p>
+        <a href="{% url 'login' %}">Login</a>
+    </form>
+  {% endblock %}

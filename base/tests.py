@@ -1,3 +1,3 @@
 from django.test import TestCase
+from .models import Books
 
-# Create your tests here.

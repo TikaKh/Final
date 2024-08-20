@@ -276,3 +276,48 @@ a{
     width:  50px; /* Ensures the image scales to fit the container */
     height: auto; /* Maintains aspect ratio of the image */
 }
+.container {
+    padding: 20px;
+}
+
+.page-title {
+    color: #a96bef; /* Light purple color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sights-container {
+    text-align: center;
+}
+
+.sights-container h2 {
+    color: #a96bef;
+    margin-bottom: 20px;
+}
+
+.sights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sights-list li {
+    margin-bottom: 10px;
+}
+
+.sights-list a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+    font-size: 1.2rem;
+}
+
+.sights-list a:hover {
+    text-decoration: underline;
+}

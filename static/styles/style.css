@@ -1,5 +1,5 @@
 body{
-    background-color:  #F8EDE3;
+    background-color:  #f1d8ff;
 }
 a{
     text-decoration: none;
@@ -176,7 +176,7 @@ a{
     background-color: #ccc; /* Hover effect */
 }
 .custom-navbar {
-    background-color: #F1D3CE;
+    background-color: #c257ff;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -193,7 +193,7 @@ a{
 }
 
 .custom-navbar {
-    background-color: #F1D3CE;
+    background-color: #c257ff;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -223,4 +223,56 @@ a{
 
 .custom-navbar .form-control {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.custom-navbar .nav-link {
+    margin-right: 20px; /* Adjust as needed */
+}
+.btn-add-tour {
+        display: block;
+        width: 50%;
+        padding: 10px 20px;
+        margin-top: 30px;
+        background-color: #79edb3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-add-tour:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    .btn-add-tour:active {
+        background-color: #1e7e34;
+    }
+.btn-light-purple {
+    background-color: #a96bef; /* Light purple color */
+    color: white;
+    border-color: #a96bef;
+}
+
+.btn-light-purple:hover {
+    background-color: #C0B0D0; /* Slightly darker purple on hover */
+    border-color: #C0B0D0;
+}
+.logo-circle {
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Ensures the image fits within the circle */
+    display: inline-flex; /* Centers the image within the circle */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    background-color: #ffffff; /* Background color of the circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+}
+.logo-image {
+    width:  50px; /* Ensures the image scales to fit the container */
+    height: auto; /* Maintains aspect ratio of the image */
 }

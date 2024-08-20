@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from ..models import Books
+from ..models import Travel
 
-class BookSerializer(ModelSerializer):
+class TravelSerializer(ModelSerializer):
     class Meta:
-        model=Books
+        model=Travel
         fields='__all__'

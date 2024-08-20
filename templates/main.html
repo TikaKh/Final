@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     </head>
         <body>
-            {% include 'navbar.html' %}
+            {% if request.resolver_match.url_name != 'login' %}
+                {% include 'navbar.html' %}
+            {% endif %}
 
             {% if messages %}
                     {% for message in messages %}

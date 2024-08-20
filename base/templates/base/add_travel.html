@@ -1,50 +1,50 @@
 {% extends 'main.html' %}
 
-{% block title %}<title> Add book  </title> {% endblock %}
+{% block title %}<title> Add Tour  </title> {% endblock %}
 
 {% block content %}
-   <h1> Adding book : </h1>
+   <h1> Adding Tour : </h1>
    <form method ="POST" action="" enctype="multipart/form-data">
        {% csrf_token %}
-       <label> Book Cover : </label>
+       <label> Tour Cover : </label>
        <br>
        {{ form.picture }}
        <div>
-           <label> Book Title : </label>
+           <label> Tour Title : </label>
            <br>
            {{ form.name }}
        </div>
        <div>
-             <label for="book_author"> Author: </label>
+             <label for="travel_author"> Author: </label>
              <br>
              <input required type="text" name="author" list="author-list">
              <datalist id = "author-list">
                  {% for author in authors %}
-                     <select id="book_author">
+                     <select id="travel_author">
                          <option value="{{ author.name }}"> {{ author.name }} </option>
                      </select>
                  {% endfor %}
              </datalist>
        </div>
        <div>
-               <label for="book_genre"> Genre: </label>
+               <label for="travel_genre"> Genre: </label>
                <br>
                <input required type="text" name="genre" list="genre-list">
                <datalist id = "genre-list">
                    {% for genre in genres %}
-                       <select id="book_genre">
+                       <select id="travel_genre">
                            <option value="{{ genre.name }}"> {{ genre.name }} </option>
                        </select>
                     {% endfor %}
                </datalist>
        </div>
        <div>
-           <label> Book Description : </label>
+           <label> Tour Description : </label>
            <br>
            {{ form.description }}
        </div>
        <div>
-           <label> Book Description : </label>
+           <label> Tour Description : </label>
            <br>
            {{ form.file }}
        </div>

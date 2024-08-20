@@ -1,23 +1,35 @@
 {% extends 'main.html' %}
-           {% block title %}<title> Login Page </title> {% endblock %}
+{% load static %}
+{% block title %}<title>Login Page</title>{% endblock %}
 
-  {% block content %}
-    <h1 style="color:purple;" >Login page</h1>
-    <form method="POST" action="">
-    {% csrf_token %}
-        <label> Username : </label>
-        <br>
-        <input type="text" name="username">
-        <br>
-        <label> Password : </label>
-        <br>
-        <input type="password" name="password">
-        <br>
-        <input type="submit" name="Login">
-        <br>
-        <br>
-        <p>Have not signed up yet??</p>
-        <a href="{% url 'register' %}">Register</a>
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4" style="max-width: 400px; width: 100%;">
+        <div class="text-center mb-4">
+            <div class="logo-circle">
+                <img src="{% static 'files/travel.svg' %}" alt="Logo" class="logo-image">
+            </div>
+        </div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">მომხმარებელი:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">პაროლი:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-light-purple w-100">Login</button>
+            <div class="mt-3 text-center">
+                <p class="mb-0">ჯერ არ დარეგისტრირებულხარ?</p>
+                <br>
+                <a href="{% url 'register' %}" class="btn btn-light-purple">რეგისტრაცია</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
 
-    </form>
-  {% endblock %}
+{% block navbar %}
+{% endblock %}

@@ -1,9 +1,10 @@
 {% extends 'main.html' %}
-    {%block title%}
-        <title> Home Page </title>
-    {% endblock %}
 
-  {% block content%}
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block content %}
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -26,10 +27,12 @@
     </button>
 </div>
 
+<!-- Include the travels section -->
 {% include 'base/travels.html' %}
 
 {% endblock %}
+
+<!-- Include Bootstrap CSS and JS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-

@@ -18,18 +18,30 @@ def home(request):
 
 def about(request):
     return render(request, 'base/about.html')
-
 def profile(request, pk):
     user = User.objects.get(id=pk)
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
-    travels = user.travels.filter(Q(name__icontains=q)
-                                  | Q(description__icontains=q) | Q(autor__name__icontains=q) | Q(genre__name__icontains=q))
-    travels = list(dict.fromkeys(travels))
+    q = request.GET.get('q') if request.GET.get('q') is not None else ''
+    travels = Travel.objects.filter(creator=user).filter(
+        Q(name__icontains=q) | Q(description__icontains=q) | Q(autor__name__icontains=q) | Q(genre__name__icontains=q)
+    )
+    travels = list(dict.fromkeys(travels))  # Removing duplicates, if any
     heading = "My Library"
     genres = Genre.objects.all()
 
     context = {"travels": travels, "heading": heading, 'genres': genres}
     return render(request, 'base/profile.html', context)
+
+# def profile(request, pk):
+#     user = User.objects.get(id=pk)
+#     q = request.GET.get('q') if request.GET.get('q') != None else ''
+#     travels = user.travels.filter(Q(name__icontains=q)
+#                                   | Q(description__icontains=q) | Q(autor__name__icontains=q) | Q(genre__name__icontains=q))
+#     travels = list(dict.fromkeys(travels))
+#     heading = "My Library"
+#     genres = Genre.objects.all()
+#
+#     context = {"travels": travels, "heading": heading, 'genres': genres}
+#     return render(request, 'base/profile.html', context)
 def adding(request,id):
     user = request.user
     travel=Travel.objects.get(id=id)
@@ -157,5 +169,5 @@ def delete_travel(request, id):
         obj.picture.delete()
         obj.file.delete()
         obj.delete()
-        return redirect('home')
+        return redirect('profile')
     return render(request,'base/delete.html',{'obj': obj })
